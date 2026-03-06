@@ -1,250 +1,1118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Olorunfemi Babtunde | Strategy & Finance</title>
-  <meta name="description" content="Olorunfemi Babtunde - Strategy & Finance. Research-led strategy, financial modeling, and cross-functional execution." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Olorunfemi Babatunde | Strategy & Finance Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #F5F0E8;
+    --sand: #E8DDD0;
+    --tan: #C9B99A;
+    --brown: #8B6F47;
+    --dark-brown: #5C4530;
+    --espresso: #2C1A0E;
+    --gold: #B8960C;
+    --gold-light: #D4AC0D;
+    --text-dark: #1E1208;
+    --text-mid: #4A3728;
+    --text-soft: #7A6555;
+    --accent: #9E6B45;
+    --accent-light: #C4896A;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--sand); }
+  ::-webkit-scrollbar-thumb { background: var(--tan); border-radius: 3px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--sand);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 20px rgba(44,26,14,0.08); }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--espresso); letter-spacing: 0.5px;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-mid);
+    text-decoration: none; transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--gold);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--dark-brown); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--espresso); color: var(--cream) !important;
+    padding: 0.5rem 1.2rem; border-radius: 2px;
+    font-size: 0.78rem !important;
+  }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--dark-brown) !important; color: var(--cream) !important; }
+
+  /* hamburger */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--espresso); border-radius: 1px; transition: 0.3s; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 70px 5% 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 80% 50%, rgba(184,150,12,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 50% at 10% 80%, rgba(139,111,71,0.08) 0%, transparent 60%);
+  }
+  .hero-bg-lines {
+    position: absolute; inset: 0; z-index: 0;
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 79px,
+      rgba(201,185,154,0.15) 80px
+    );
+  }
+  .hero-text { z-index: 1; padding-right: 5%; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 1.5rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 30px; height: 1px; background: var(--gold);
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 600; line-height: 1.05;
+    color: var(--espresso); margin-bottom: 1rem;
+  }
+  .hero-name em { font-style: italic; color: var(--accent); }
+  .hero-title {
+    font-size: 1rem; color: var(--text-soft); font-weight: 400;
+    line-height: 1.7; margin-bottom: 2rem; max-width: 480px;
+  }
+  .hero-title strong { color: var(--dark-brown); font-weight: 600; }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-bottom: 2.5rem;
+  }
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 700; color: var(--espresso); line-height: 1;
+  }
+  .hero-stat-num span { color: var(--gold); }
+  .hero-stat-label { font-size: 0.72rem; color: var(--text-soft); letter-spacing: 0.05em; margin-top: 0.2rem; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--espresso); color: var(--cream);
+    padding: 0.85rem 2rem; font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    border: none; cursor: pointer; text-decoration: none;
+    display: inline-block; transition: all 0.3s;
+    border-radius: 2px;
+  }
+  .btn-primary:hover { background: var(--dark-brown); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(44,26,14,0.2); }
+  .btn-outline {
+    background: transparent; color: var(--espresso);
+    padding: 0.85rem 2rem; font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    border: 1.5px solid var(--espresso); cursor: pointer;
+    text-decoration: none; display: inline-block; transition: all 0.3s; border-radius: 2px;
+  }
+  .btn-outline:hover { background: var(--espresso); color: var(--cream); transform: translateY(-2px); }
+
+  /* hero photo */
+  .hero-photo-wrap { z-index: 1; display: flex; justify-content: center; align-items: center; }
+  .hero-photo-frame {
+    position: relative; width: min(380px, 90%);
+  }
+  .hero-photo-bg {
+    position: absolute; inset: -16px -16px 16px 16px;
+    background: linear-gradient(135deg, var(--sand) 0%, var(--tan) 100%);
+    border-radius: 4px; z-index: 0;
+  }
+  .hero-photo-inner {
+    position: relative; z-index: 1;
+    width: 100%; padding-bottom: 120%;
+    background: linear-gradient(160deg, #3a3a4a 0%, #1a1a24 40%, #2a2a35 100%);
+    border-radius: 4px; overflow: hidden;
+    box-shadow: 0 20px 60px rgba(44,26,14,0.25);
+  }
+  /* Suit illustration via CSS */
+  .suit-figure {
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 75%; height: 85%;
+  }
+  /* head */
+  .fig-head {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 42%; padding-bottom: 42%; border-radius: 50%;
+    background: linear-gradient(160deg, #8B6240 0%, #6B4020 60%, #5A3015 100%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  .fig-head::after {
+    content: '';
+    position: absolute; bottom: -3px; left: 10%; width: 80%; height: 30%;
+    background: linear-gradient(160deg, #7B5230 0%, #5A3015 100%);
+    border-radius: 0 0 50% 50%;
+  }
+  /* stubble */
+  .fig-stubble {
+    position: absolute; top: 72%; left: 20%; width: 60%; height: 18%;
+    background: rgba(30,10,0,0.25); border-radius: 0 0 50% 50%;
+  }
+  /* neck */
+  .fig-neck {
+    position: absolute; top: 36%; left: 50%; transform: translateX(-50%);
+    width: 16%; height: 12%;
+    background: linear-gradient(180deg, #7B5230 0%, #5A3015 100%);
+  }
+  /* shirt collar */
+  .fig-collar-left {
+    position: absolute; top: 43%; left: 30%; width: 22%; height: 16%;
+    background: white; transform: skewX(15deg); border-radius: 2px;
+    box-shadow: inset -2px 0 4px rgba(0,0,0,0.1);
+  }
+  .fig-collar-right {
+    position: absolute; top: 43%; right: 30%; width: 22%; height: 16%;
+    background: white; transform: skewX(-15deg); border-radius: 2px;
+    box-shadow: inset 2px 0 4px rgba(0,0,0,0.1);
+  }
+  /* tie */
+  .fig-tie {
+    position: absolute; top: 44%; left: 50%; transform: translateX(-50%);
+    width: 14%; height: 45%;
+    background: linear-gradient(160deg, #1a3a7a 0%, #0d2456 40%, #1a3a7a 60%, #0d2456 100%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 70%, 50% 100%, 0% 70%);
+    z-index: 2;
+  }
+  /* tie pattern */
+  .fig-tie::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg, rgba(212,172,13,0.3) 0px, rgba(212,172,13,0.3) 2px,
+      transparent 2px, transparent 8px
+    );
+    clip-path: polygon(20% 0%, 80% 0%, 100% 70%, 50% 100%, 0% 70%);
+  }
+  /* suit jacket */
+  .fig-suit {
+    position: absolute; top: 46%; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(160deg, #3a3a4a 0%, #282833 100%);
+    clip-path: polygon(0 10%, 38% 0, 50% 15%, 62% 0, 100% 10%, 100% 100%, 0 100%);
+  }
+  .fig-suit::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, transparent 50%, rgba(255,255,255,0.03) 100%);
+    clip-path: polygon(0 10%, 38% 0, 50% 15%, 62% 0, 100% 10%, 100% 100%, 0 100%);
+  }
+  /* lapels */
+  .fig-lapel-l {
+    position: absolute; top: 46%; left: 0; width: 40%; height: 40%;
+    background: linear-gradient(135deg, #454555 0%, #2e2e3e 100%);
+    clip-path: polygon(0 0, 100% 30%, 55% 100%, 0 100%);
+  }
+  .fig-lapel-r {
+    position: absolute; top: 46%; right: 0; width: 40%; height: 40%;
+    background: linear-gradient(225deg, #454555 0%, #2e2e3e 100%);
+    clip-path: polygon(100% 0, 0 30%, 45% 100%, 100% 100%);
+  }
+  /* pocket square */
+  .fig-pocket {
+    position: absolute; top: 55%; left: 10%; width: 10%; height: 6%;
+    background: var(--gold-light);
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  }
+  /* hair */
+  .fig-hair {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 42%; padding-bottom: 20%; border-radius: 50% 50% 0 0;
+    background: linear-gradient(180deg, #0d0500 0%, #1a0800 100%);
+  }
+  /* shoulder highlight */
+  .fig-shoulder-shine {
+    position: absolute; top: 47%; left: 5%; width: 15%; height: 8%;
+    background: rgba(255,255,255,0.04); border-radius: 50%; transform: rotate(-20deg);
+  }
+
+  .photo-badge {
+    position: absolute; bottom: -16px; right: -16px; z-index: 2;
+    background: var(--gold); color: var(--espresso);
+    padding: 0.7rem 1.1rem; border-radius: 2px;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; line-height: 1.4;
+    box-shadow: 0 4px 16px rgba(184,150,12,0.3);
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 100px 5%; }
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 1rem;
+  }
+  .section-eyebrow::before {
+    content: ''; display: block; width: 20px; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 600; color: var(--espresso);
+    line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .section-divider {
+    width: 50px; height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--tan));
+    margin-bottom: 3rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--warm-white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; }
+  .about-left { position: sticky; top: 100px; }
+  .about-portrait {
+    width: 100%; aspect-ratio: 3/4;
+    background: linear-gradient(160deg, #3a3a4a 0%, #1a1a24 40%, #2a2a35 100%);
+    border-radius: 4px; overflow: hidden; position: relative;
+    box-shadow: 0 12px 40px rgba(44,26,14,0.15);
+    margin-bottom: 1.5rem;
+  }
+  /* reuse suit figure in about */
+  .about-portrait .suit-figure { width: 70%; height: 90%; }
+  .about-portrait .fig-head { width: 38%; padding-bottom: 38%; }
+  .about-portrait .fig-hair { width: 38%; padding-bottom: 18%; }
+  .about-portrait .fig-neck { width: 14%; }
+  .about-contact-links { display: flex; flex-direction: column; gap: 0.6rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 0.7rem;
+    font-size: 0.83rem; color: var(--text-mid); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-link:hover { color: var(--gold); }
+  .contact-link-icon {
+    width: 32px; height: 32px; background: var(--sand); border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; flex-shrink: 0;
+  }
+
+  .about-bio p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 1.2rem; }
+  .about-bio p:first-child { font-size: 1.05rem; color: var(--text-dark); font-weight: 400; }
+  .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+  .highlight-card {
+    background: var(--cream); border: 1px solid var(--sand);
+    padding: 1.2rem; border-radius: 4px;
+    border-left: 3px solid var(--gold);
+  }
+  .highlight-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 700; color: var(--espresso); line-height: 1;
+  }
+  .highlight-card-num span { color: var(--gold); font-size: 1.3rem; }
+  .highlight-card-label { font-size: 0.75rem; color: var(--text-soft); margin-top: 0.3rem; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--cream); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .service-card {
+    background: var(--warm-white); border: 1px solid var(--sand);
+    padding: 2.2rem 1.8rem; border-radius: 4px; position: relative; overflow: hidden;
+    transition: all 0.35s; cursor: default;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 50px rgba(44,26,14,0.12);
+    border-color: var(--tan);
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    font-size: 2rem; margin-bottom: 1.2rem; display: block;
+  }
+  .service-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 600;
+    color: var(--espresso); margin-bottom: 0.7rem;
+  }
+  .service-desc { font-size: 0.85rem; color: var(--text-soft); line-height: 1.75; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.2rem; }
+  .service-tag {
+    font-size: 0.68rem; padding: 0.25rem 0.6rem; background: var(--sand);
+    color: var(--text-mid); border-radius: 2px; font-weight: 500; letter-spacing: 0.04em;
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--espresso); color: var(--cream); }
+  #experience .section-title { color: var(--cream); }
+  #experience .section-eyebrow { color: var(--gold-light); }
+  #experience .section-eyebrow::before { background: var(--gold-light); }
+  #experience .section-divider { background: linear-gradient(90deg, var(--gold), transparent); }
+
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 8px; bottom: 8px;
+    width: 1px; background: linear-gradient(180deg, var(--gold), rgba(184,150,12,0.1));
+  }
+  .timeline-item { position: relative; margin-bottom: 3rem; }
+  .timeline-dot {
+    position: absolute; left: -2.4rem; top: 6px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--gold); border: 2px solid var(--espresso);
+    box-shadow: 0 0 0 4px rgba(184,150,12,0.2);
+  }
+  .timeline-period {
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 0.4rem;
+  }
+  .timeline-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600; color: var(--cream); margin-bottom: 0.15rem;
+  }
+  .timeline-company { font-size: 0.85rem; color: var(--tan); margin-bottom: 1rem; }
+  .timeline-points { list-style: none; }
+  .timeline-points li {
+    font-size: 0.84rem; color: rgba(250,247,242,0.75); line-height: 1.7;
+    margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative;
+  }
+  .timeline-points li::before {
+    content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 0.75rem;
+  }
+  .timeline-tag {
+    display: inline-block; font-size: 0.68rem; padding: 0.2rem 0.6rem;
+    background: rgba(184,150,12,0.15); border: 1px solid rgba(184,150,12,0.3);
+    color: var(--gold-light); border-radius: 2px; margin-right: 0.4rem; margin-top: 0.8rem;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--warm-white); }
+  .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .skill-group { margin-bottom: 2rem; }
+  .skill-group-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600; color: var(--espresso);
+    margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
+  }
+  .skill-group-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--sand);
+  }
+  .skill-item { margin-bottom: 0.9rem; }
+  .skill-label { font-size: 0.8rem; color: var(--text-mid); font-weight: 500; margin-bottom: 0.35rem; display: flex; justify-content: space-between; }
+  .skill-bar { height: 3px; background: var(--sand); border-radius: 2px; overflow: hidden; }
+  .skill-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--gold), var(--accent)); transition: width 1s ease; width: 0; }
+
+  .tools-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+  .tool-chip {
+    background: var(--cream); border: 1px solid var(--sand);
+    color: var(--text-mid); font-size: 0.78rem; font-weight: 500;
+    padding: 0.4rem 0.9rem; border-radius: 20px;
+    transition: all 0.2s;
+  }
+  .tool-chip:hover { border-color: var(--gold); color: var(--dark-brown); background: rgba(184,150,12,0.05); }
+
+  /* ── CERTIFICATIONS ── */
+  #certifications { background: var(--cream); }
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .cert-card {
+    background: var(--warm-white); border: 1px solid var(--sand);
+    padding: 1.3rem 1.5rem; border-radius: 4px;
+    display: flex; align-items: flex-start; gap: 1rem;
+    transition: all 0.25s;
+  }
+  .cert-card:hover { border-color: var(--tan); box-shadow: 0 4px 20px rgba(44,26,14,0.06); transform: translateY(-2px); }
+  .cert-icon {
+    font-size: 1.4rem; flex-shrink: 0; width: 40px; height: 40px;
+    background: var(--sand); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cert-name { font-size: 0.82rem; font-weight: 600; color: var(--espresso); line-height: 1.4; }
+  .cert-org { font-size: 0.72rem; color: var(--text-soft); margin-top: 0.2rem; }
+  .cert-year { font-size: 0.68rem; color: var(--gold); font-weight: 600; margin-top: 0.2rem; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--warm-white); }
+  .contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
+  .contact-info { }
+  .contact-info p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 2rem; }
+  .contact-detail { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+  .contact-detail-icon {
+    width: 42px; height: 42px; background: var(--sand); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+  }
+  .contact-detail-text { font-size: 0.85rem; color: var(--text-mid); }
+  .contact-detail-label { font-size: 0.7rem; color: var(--text-soft); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.1rem; }
+
+  .contact-form { background: var(--cream); border: 1px solid var(--sand); padding: 2.5rem; border-radius: 4px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: var(--text-soft); display: block; margin-bottom: 0.5rem; }
+  .form-input, .form-textarea, .form-select {
+    width: 100%; background: var(--warm-white); border: 1px solid var(--sand);
+    padding: 0.8rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+    color: var(--text-dark); border-radius: 2px; transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--gold); }
+  .form-textarea { resize: vertical; min-height: 100px; }
+  .form-submit {
+    width: 100%; background: var(--espresso); color: var(--cream);
+    border: none; padding: 1rem; font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px; transition: all 0.3s;
+  }
+  .form-submit:hover { background: var(--dark-brown); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(44,26,14,0.2); }
+
+  /* form success */
+  .form-success {
+    display: none; text-align: center; padding: 2rem;
+    color: var(--dark-brown); font-size: 0.9rem;
+  }
+  .form-success .check { font-size: 2.5rem; margin-bottom: 0.5rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--espresso); color: rgba(250,247,242,0.5);
+    text-align: center; padding: 2.5rem 5%;
+    font-size: 0.78rem;
+  }
+  footer strong { color: var(--tan); }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; padding-top: 90px; text-align: center; }
+    .hero-photo-wrap { order: -1; margin-bottom: 2rem; }
+    .hero-photo-frame { width: min(260px, 80%); }
+    .hero-stats { justify-content: center; }
+    .hero-btns { justify-content: center; }
+    .hero-title { margin: 0 auto 2rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-left { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+    .about-portrait { display: none; }
+    .skills-layout { grid-template-columns: 1fr; }
+    .contact-layout { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: var(--cream); border-top: 1px solid var(--sand); padding: 1.5rem 5%; gap: 1rem; box-shadow: 0 8px 24px rgba(44,26,14,0.1); }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 500px) {
+    section { padding: 70px 5%; }
+    .hero-stats { gap: 1.5rem; }
+    .about-left { grid-template-columns: 1fr; }
+    .about-highlights { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
-
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand">
-          <h1>Olorunfemi Babtunde</h1>
-          <span>Strategy & Finance</span>
-        </div>
 
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#metrics">Impact</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#timeline">Timeline</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="Services">Services</a></li>
-          <li><a href="Articles">Articles</a></li>
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">Olorunfemi <span>B.</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
 
-        </ul>
-
-        <div class="nav-cta">
-          <a class="btn btn-ghost" href="case-studies.html">Case Studies</a>
-          <a class="btn btn-primary" href="assets/Resume_Olorunfemi_Babtunde.pdf" download>Download CV</a>
-        </div>
-      </nav>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-lines"></div>
+  <div class="hero-text fade-up">
+    <div class="hero-eyebrow">Senior Strategy Professional</div>
+    <h1 class="hero-name">
+      Olorunfemi<br><em>Babatunde</em>
+    </h1>
+    <p class="hero-title">
+      <strong>Strategy. Finance. Growth.</strong><br>
+      6+ years translating market intelligence, financial analysis and research insights into clear strategic direction and measurable outcomes across financial services and high-growth businesses.
+    </p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">6<span>+</span></div>
+        <div class="hero-stat-label">Years Experience</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">60<span>+</span></div>
+        <div class="hero-stat-label">Business Cases</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">20<span>%</span></div>
+        <div class="hero-stat-label">ROI on Investments</div>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <section class="hero" id="top">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <h2>Strategy & Finance, built for execution.</h2>
-            <h3>Research-led decisions • Financial modeling • Cross-functional delivery</h3>
-            <p>
-              I support leadership teams with clear analysis, crisp narratives, and decision-ready materials.
-              My work spans market and macro research, business cases, performance insights, and structured execution
-              across stakeholders.
-            </p>
-
-            <div>
-              <a class="btn btn-primary" href="mailto:Olorunfemibabs@gmail.com">Email Me</a>
-              <a class="btn btn-secondary" href="https://www.linkedin.com/in/wisemanbabs" target="_blank" rel="noopener">LinkedIn</a>
-              <a class="btn btn-secondary" href="assets/Resume_Olorunfemi_Babtunde.pdf" download>Download CV</a>
-            </div>
-
-            <div class="divider"></div>
-
-            <p class="muted">
-              Want a deeper view? Explore <a href="case-studies.html" style="color:#2f80ed; text-decoration:none; font-weight:600;">Case Studies</a>.
-            </p>
-          </div>
-
-          <div>
-            <img src="assets/profile.webp" alt="Olorunfemi Babtunde"
-                 class="profile-img"
-                 onerror="this.onerror=null; this.src='assets/profile.jpg';" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About</h2>
-        <div class="card">
-          <p class="job-desc">
-            I work at the intersection of strategy, finance, and analytics, translating complex signals into clear choices.
-            From executive-ready strategy briefs to models and dashboards, I focus on what leadership needs to decide, defend, and deliver.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="metrics">
-      <div class="container">
-        <h2 class="section-title">Impact Snapshot</h2>
-
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-number" data-target="12">0</div>
-            <div class="metric-label">Strategy briefs delivered</div>
-          </div>
-
-          <div class="metric-card">
-            <div class="metric-number" data-target="8">0</div>
-            <div class="metric-label">Cross-functional initiatives supported</div>
-          </div>
-
-          <div class="metric-card">
-            <div class="metric-number" data-target="5">0</div>
-            <div class="metric-label">Dashboards and insight tools built</div>
-          </div>
-
-          <div class="metric-card">
-            <div class="metric-number" data-target="3">0</div>
-            <div class="metric-label">Markets / segments analyzed deeply</div>
-          </div>
-        </div>
-
-        <p class="metrics-note">Replace these numbers with your real stats anytime.</p>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container">
-        <h2 class="section-title">Core Skills</h2>
-
-        <div class="skills-grid">
-          <div class="skill">Strategy Research & Insight</div>
-          <div class="skill">Financial Modeling & Business Cases</div>
-          <div class="skill">Market Sizing (TAM/SAM/SOM)</div>
-          <div class="skill">Executive Reporting & Storytelling</div>
-          <div class="skill">Performance Dashboards</div>
-          <div class="skill">Cross-Functional Delivery</div>
-          <div class="skill">Stakeholder Management</div>
-          <div class="skill">Scenario & Sensitivity Analysis</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="container">
-        <h2 class="section-title">Experience Highlights</h2>
-
-        <div class="card">
-          <div class="job-title">Senior Strategy Associate</div>
-          <div class="company">Sterling Bank Group (Sterling + Alternative Bank)</div>
-          <div class="job-desc">
-            Market and macro research, executive reporting, strategy documents, and cross-functional execution
-            supporting leadership decision-making.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="job-title">Strategy & Analytics</div>
-          <div class="company">Gokada</div>
-          <div class="job-desc">
-            Commercial analysis, cohort insights, and operational strategy in a fast-moving environment.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="job-title">Finance & Business Analysis</div>
-          <div class="company">Earlier roles</div>
-          <div class="job-desc">
-            Financial modeling, reporting, and decision support across teams and stakeholders.
-          </div>
-        </div>
-
-        <p class="muted" style="margin-top:10px;">
-          Full details are in the downloadable CV.
-        </p>
-      </div>
-    </section>
-
-    <section id="timeline">
-      <div class="container">
-        <h2 class="section-title">Career Timeline</h2>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <div class="timeline-role">Senior Strategy Associate</div>
-                <div class="timeline-date">Sterling Bank Group</div>
-              </div>
-              <div class="timeline-body">
-                Insight-led strategy, executive reporting, and cross-functional execution across Sterling and Alternative Bank.
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <div class="timeline-role">Strategy & Analytics</div>
-                <div class="timeline-date">Gokada</div>
-              </div>
-              <div class="timeline-body">
-                Cohort insights, commercial analysis, and operational strategy to support growth and retention.
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <div class="timeline-role">Finance & Business Analysis</div>
-                <div class="timeline-date">Earlier roles</div>
-              </div>
-              <div class="timeline-body">
-                Reporting, modeling, and decision support across business units and stakeholders.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-
-        <div class="contact-box">
-          <p><strong>Email:</strong> <a href="mailto:Olorunfemibabs@gmail.com" style="color:#2f80ed; text-decoration:none;">Olorunfemibabs@gmail.com</a></p>
-          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/wisemanbabs" target="_blank" rel="noopener" style="color:#2f80ed; text-decoration:none;">www.linkedin.com/in/wisemanbabs</a></p>
-
-          <div class="contact-row">
-            <a class="btn btn-primary" href="mailto:Olorunfemibabs@gmail.com">Send Email</a>
-            <a class="btn btn-secondary" href="case-studies.html">View Case Studies</a>
-            <a class="btn btn-secondary" href="assets/Resume_Olorunfemi_Babtunde.pdf" download>Download CV</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      © <span id="year"></span> Olorunfemi Babtunde • Strategy & Finance
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Work With Me</a>
+      <a href="#experience" class="btn-outline">View Experience</a>
     </div>
-  </footer>
+  </div>
+  <div class="hero-photo-wrap fade-up" style="transition-delay:0.2s">
+    <div class="hero-photo-frame">
+      <div class="hero-photo-bg"></div>
+      <div class="hero-photo-inner">
+        <div class="suit-figure">
+          <div class="fig-hair"></div>
+          <div class="fig-head">
+            <div class="fig-stubble"></div>
+          </div>
+          <div class="fig-neck"></div>
+          <div class="fig-collar-left"></div>
+          <div class="fig-collar-right"></div>
+          <div class="fig-tie"></div>
+          <div class="fig-suit"></div>
+          <div class="fig-lapel-l"></div>
+          <div class="fig-lapel-r"></div>
+          <div class="fig-pocket"></div>
+          <div class="fig-shoulder-shine"></div>
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.2rem;background:linear-gradient(0deg,rgba(20,10,4,0.9) 0%,transparent);z-index:3;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--cream);font-weight:600;">Olorunfemi Babatunde</div>
+          <div style="font-size:0.65rem;color:var(--tan);letter-spacing:0.1em;text-transform:uppercase;">Senior Strategy Associate</div>
+        </div>
+        <div style="position:absolute;top:1rem;right:1rem;background:rgba(184,150,12,0.9);color:#2C1A0E;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;padding:0.3rem 0.6rem;border-radius:2px;text-transform:uppercase;z-index:3;">Sterling Bank</div>
+      </div>
+      <div class="photo-badge">Lagos,<br>Nigeria 🇳🇬</div>
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-eyebrow">About Me</div>
+  <div class="section-title">The Strategy Mind<br>Behind the Numbers</div>
+  <div class="section-divider"></div>
+  <div class="about-grid">
+    <div class="about-left fade-up">
+      <div class="about-portrait">
+        <div class="suit-figure">
+          <div class="fig-hair"></div>
+          <div class="fig-head"><div class="fig-stubble"></div></div>
+          <div class="fig-neck"></div>
+          <div class="fig-collar-left"></div>
+          <div class="fig-collar-right"></div>
+          <div class="fig-tie"></div>
+          <div class="fig-suit"></div>
+          <div class="fig-lapel-l"></div>
+          <div class="fig-lapel-r"></div>
+          <div class="fig-pocket"></div>
+          <div class="fig-shoulder-shine"></div>
+        </div>
+      </div>
+      <div class="about-contact-links">
+        <a href="tel:+2348168750054" class="contact-link">
+          <div class="contact-link-icon">📞</div>
+          +234 816 875 0054
+        </a>
+        <a href="mailto:Olorunfemibabs@gmail.com" class="contact-link">
+          <div class="contact-link-icon">✉️</div>
+          Olorunfemibabs@gmail.com
+        </a>
+        <a href="#" class="contact-link">
+          <div class="contact-link-icon">📍</div>
+          Lagos, Nigeria
+        </a>
+      </div>
+    </div>
+    <div class="about-bio fade-up" style="transition-delay:0.15s">
+      <p>I am a disciplined, innovation-driven strategy and finance professional with over 6 years of experience helping organisations translate complexity into clarity and ambition into results.</p>
+      <p>My career has been built at the intersection of strategy, finance, and intelligence — working closely with Executive and Board-level stakeholders at Sterling Bank and Gokada to shape decisions that matter. From national financial inclusion strategies to venture investment appraisals, I bring rigorous analysis and clear storytelling to every engagement.</p>
+      <p>Beyond corporate strategy, I am a passionate Life & Relationship Coach, believing that the same principles that drive business success — clarity, intentionality, and disciplined execution — are the foundations of a fulfilling personal life.</p>
+      <p>I hold a B.Sc. in Accounting from Adekunle Ajasin University and am currently pursuing an MSc in Financial Engineering at WorldQuant University (USA).</p>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <div class="highlight-card-num">50<span>+</span></div>
+          <div class="highlight-card-label">Investment Teasers & Strategy Papers Delivered</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-card-num">20<span>%</span></div>
+          <div class="highlight-card-label">Improved Strategic Resource Allocation</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-card-num">2</div>
+          <div class="highlight-card-label">Industries — Banking & High-Growth Startups</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-card-num">MSc</div>
+          <div class="highlight-card-label">Financial Engineering — WorldQuant University</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-eyebrow">What I Offer</div>
+  <div class="section-title">Services</div>
+  <div class="section-divider"></div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <span class="service-icon">📊</span>
+      <div class="service-title">Financial Modelling</div>
+      <p class="service-desc">Investor-ready financial models, unit economics, revenue and cost projections, scenario analysis, and valuation frameworks tailored for startups, scale-ups, and established enterprises.</p>
+      <div class="service-tags">
+        <span class="service-tag">DCF Valuation</span>
+        <span class="service-tag">NPV / IRR</span>
+        <span class="service-tag">Scenario Analysis</span>
+        <span class="service-tag">Pitch Financials</span>
+      </div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.1s">
+      <span class="service-icon">🧭</span>
+      <div class="service-title">Business Consulting & Strategy</div>
+      <p class="service-desc">End-to-end enterprise strategy — from market entry analysis and competitor intelligence to business case development, Board-level reporting, and strategic execution planning.</p>
+      <div class="service-tags">
+        <span class="service-tag">Market Entry</span>
+        <span class="service-tag">Growth Strategy</span>
+        <span class="service-tag">Due Diligence</span>
+        <span class="service-tag">Business Cases</span>
+      </div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.2s">
+      <span class="service-icon">💞</span>
+      <div class="service-title">Relationship Counselling</div>
+      <p class="service-desc">Evidence-based relationship guidance to help individuals and couples build healthier communication patterns, navigate challenges, and cultivate deeply fulfilling partnerships.</p>
+      <div class="service-tags">
+        <span class="service-tag">Communication</span>
+        <span class="service-tag">Conflict Resolution</span>
+        <span class="service-tag">Couples</span>
+        <span class="service-tag">Singles</span>
+      </div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.3s">
+      <span class="service-icon">🌱</span>
+      <div class="service-title">Life Coaching</div>
+      <p class="service-desc">Structured, goal-oriented coaching to help high-performers unlock their potential, gain clarity on their purpose, overcome limiting beliefs, and build lives of intentional impact.</p>
+      <div class="service-tags">
+        <span class="service-tag">Goal Setting</span>
+        <span class="service-tag">Mindset</span>
+        <span class="service-tag">Clarity</span>
+        <span class="service-tag">Accountability</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-eyebrow">Career Journey</div>
+  <div class="section-title">Work Experience</div>
+  <div class="section-divider"></div>
+  <div class="timeline">
+    <div class="timeline-item fade-up">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">March 2023 — Present</div>
+      <div class="timeline-role">Senior Strategy Associate</div>
+      <div class="timeline-company">Sterling Bank · Lagos, Nigeria</div>
+      <ul class="timeline-points">
+        <li>Led user research and cohort analysis across digital products, identifying retention drivers and customer drop-off points that improved customer lifetime value and recurring revenue strength.</li>
+        <li>Developed a National Financial Inclusion Strategy adopted by Executive Management and used to engage the Presidency and key public-sector stakeholders.</li>
+        <li>Conducted due diligence and investment appraisals for venture investments, achieving 20% ROI on transactions valued at hundreds of thousands of dollars.</li>
+        <li>Developed 60+ business cases across capital and operational expenditures, improving strategic resource allocation by approximately 20%.</li>
+        <li>Delivered 50+ investment teasers, strategy papers, and investment memoranda, supporting successful mobilisation of investment capital.</li>
+        <li>Led the Branch Transformation initiative, maximising the economic and real estate value of existing branch assets across multiple Nigerian states.</li>
+      </ul>
+      <span class="timeline-tag">Strategy</span>
+      <span class="timeline-tag">Investment Appraisal</span>
+      <span class="timeline-tag">Financial Inclusion</span>
+      <span class="timeline-tag">Board Reporting</span>
+    </div>
+    <div class="timeline-item fade-up" style="transition-delay:0.1s">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">October 2020 — March 2023</div>
+      <div class="timeline-role">Finance & Business Intelligence Analyst</div>
+      <div class="timeline-company">Gokada Rides Ltd · Lagos, Nigeria</div>
+      <ul class="timeline-points">
+        <li>Prepared monthly management reports covering financial performance, operational KPIs, and key business trends for senior management and investors.</li>
+        <li>Built unit economics, revenue, and cost models to support financial planning, pricing decisions, and route-level profitability analysis.</li>
+        <li>Automated recurring reports and data workflows using SQL and BI tools, improving data accuracy, reporting speed, and management visibility.</li>
+        <li>Conducted budget tracking and variance analysis, identifying cost drivers, inefficiencies, and margin improvement opportunities in a high-volume logistics environment.</li>
+      </ul>
+      <span class="timeline-tag">Financial Analysis</span>
+      <span class="timeline-tag">SQL</span>
+      <span class="timeline-tag">BI Dashboards</span>
+      <span class="timeline-tag">Unit Economics</span>
+    </div>
+    <div class="timeline-item fade-up" style="transition-delay:0.2s">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Advisory Projects</div>
+      <div class="timeline-role">Independent Financial & Strategy Advisor</div>
+      <div class="timeline-company">Multiple Clients · 2024 — 2025</div>
+      <ul class="timeline-points">
+        <li><strong style="color:var(--gold-light)">Tax Padi (2025):</strong> End-to-end financial models for an AI-powered tax filing platform; investor-ready dashboards and pitch materials for fundraising.</li>
+        <li><strong style="color:var(--gold-light)">DigiVant (2024):</strong> Financial and unit economics models for a digital microfinance bank covering savings, lending, payments, and transfers.</li>
+        <li><strong style="color:var(--gold-light)">Energy Sector (Ongoing):</strong> Financial and market analysis on oil & gas companies — cash flow resilience, cost structures, price sensitivity, and risk-return profiles.</li>
+      </ul>
+      <span class="timeline-tag">Fintech</span>
+      <span class="timeline-tag">Energy</span>
+      <span class="timeline-tag">Microfinance</span>
+      <span class="timeline-tag">Investor Relations</span>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-eyebrow">Expertise</div>
+  <div class="section-title">Skills & Tools</div>
+  <div class="section-divider"></div>
+  <div class="skills-layout">
+    <div>
+      <div class="skill-group">
+        <div class="skill-group-title">Strategy & Growth</div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Enterprise Strategy Development</span><span>95%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Market Entry & Expansion Analysis</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>New Venture & Product Evaluation</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Financial Analysis</div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Financial Modelling & Valuation</span><span>92%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Investment Appraisal (NPV, IRR)</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Budgeting & Forecasting</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group">
+        <div class="skill-group-title">Research & Intelligence</div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Market & Competitor Research</span><span>93%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="93"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Macroeconomic Analysis</span><span>87%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="87"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Variance & Cohort Analysis</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Tools & Technology</div>
+        <div class="tools-grid">
+          <span class="tool-chip">Excel (Advanced)</span>
+          <span class="tool-chip">Power BI</span>
+          <span class="tool-chip">SQL</span>
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">Tableau</span>
+          <span class="tool-chip">Metabase</span>
+          <span class="tool-chip">Looker Studio</span>
+          <span class="tool-chip">PowerPoint</span>
+          <span class="tool-chip">JIRA</span>
+          <span class="tool-chip">Scrum</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-eyebrow">Education & Credentials</div>
+  <div class="section-title">Certifications</div>
+  <div class="section-divider"></div>
+  <div class="certs-grid">
+    <div class="cert-card fade-up">
+      <div class="cert-icon">🎓</div>
+      <div>
+        <div class="cert-name">BSc Accounting</div>
+        <div class="cert-org">Adekunle Ajasin University, Akungba</div>
+        <div class="cert-year">2018</div>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon">🏛️</div>
+      <div>
+        <div class="cert-name">MSc Financial Engineering <em style="color:var(--text-soft);font-size:0.7rem">(In View)</em></div>
+        <div class="cert-org">WorldQuant University, USA</div>
+        <div class="cert-year">Current</div>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon">📈</div>
+      <div>
+        <div class="cert-name">Corporate & Business Strategy</div>
+        <div class="cert-org">Corporate Finance Institute</div>
+        <div class="cert-year">2024</div>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon">✍️</div>
+      <div>
+        <div class="cert-name">Effective Business Writing</div>
+        <div class="cert-org">Corporate Finance Institute</div>
+        <div class="cert-year">2024</div>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon">📊</div>
+      <div>
+        <div class="cert-name">PowerPoint & Pitchbooks</div>
+        <div class="cert-org">Corporate Finance Institute</div>
+        <div class="cert-year">2024</div>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon">🖥️</div>
+      <div>
+        <div class="cert-name">Dashboards & Data Visualizations</div>
+        <div class="cert-org">Corporate Finance Institute</div>
+        <div class="cert-year">2024</div>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon">💾</div>
+      <div>
+        <div class="cert-name">Intermediate SQL Queries</div>
+        <div class="cert-org">Datacamp</div>
+        <div class="cert-year">2023</div>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon">🌍</div>
+      <div>
+        <div class="cert-name">Macroeconomics for Business Management</div>
+        <div class="cert-org">Coursera</div>
+        <div class="cert-year">2023</div>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon">🛠️</div>
+      <div>
+        <div class="cert-name">Mastering Business Analysis, Scrum & JIRA</div>
+        <div class="cert-org">Udemy</div>
+        <div class="cert-year">2025</div>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon">⛽</div>
+      <div>
+        <div class="cert-name">Ultimate Oil & Gas Economics</div>
+        <div class="cert-org">Udemy</div>
+        <div class="cert-year">2025</div>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon">🔢</div>
+      <div>
+        <div class="cert-name">Foundation of Financial Engineering</div>
+        <div class="cert-org">WorldQuant University</div>
+        <div class="cert-year">2026</div>
+      </div>
+    </div>
+    <div class="cert-card fade-up">
+      <div class="cert-icon">📋</div>
+      <div>
+        <div class="cert-name">ICAN — Skills Level <em style="color:var(--text-soft);font-size:0.7rem">(In View)</em></div>
+        <div class="cert-org">Institute of Chartered Accountants of Nigeria</div>
+        <div class="cert-year">In Progress</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-eyebrow">Get In Touch</div>
+  <div class="section-title">Let's Work Together</div>
+  <div class="section-divider"></div>
+  <div class="contact-layout">
+    <div class="contact-info fade-up">
+      <p>Whether you need a sharp financial model, a strategic roadmap for your business, or guidance on your personal journey — I'm here to help. Let's have a conversation about what you're working on.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📞</div>
+        <div>
+          <div class="contact-detail-label">Phone</div>
+          <div class="contact-detail-text">+234 816 875 0054</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">✉️</div>
+        <div>
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-text">Olorunfemibabs@gmail.com</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div>
+          <div class="contact-detail-label">Location</div>
+          <div class="contact-detail-text">Lagos, Nigeria</div>
+        </div>
+      </div>
+      <div style="margin-top:2rem;padding:1.5rem;background:var(--cream);border:1px solid var(--sand);border-radius:4px;border-left:3px solid var(--gold);">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--espresso);margin-bottom:0.4rem;">"Strategy without execution is hallucination."</div>
+        <div style="font-size:0.75rem;color:var(--text-soft);">— A guiding principle</div>
+      </div>
+    </div>
+    <div class="fade-up" style="transition-delay:0.15s">
+      <div class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" placeholder="John" id="fname"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" placeholder="Doe" id="lname"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="john@example.com" id="femail"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service of Interest</label>
+          <select class="form-select" id="fservice">
+            <option value="">Select a service...</option>
+            <option>Financial Modelling</option>
+            <option>Business Consulting & Strategy</option>
+            <option>Relationship Counselling</option>
+            <option>Life Coaching</option>
+            <option>Other / General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell me about your project or what you need help with..." id="fmessage"></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Send Message</button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="check">✅</div>
+        <strong>Message sent!</strong><br>
+        Thank you for reaching out. I'll be in touch shortly.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--tan);margin-bottom:0.5rem;">Olorunfemi Babatunde</div>
+  <div style="margin-bottom:1rem;">Senior Strategy Associate · Financial Modeller · Life Coach</div>
+  <div>© 2026 <strong>Olorunfemi Babatunde</strong>. All rights reserved. · <a href="mailto:Olorunfemibabs@gmail.com">Olorunfemibabs@gmail.com</a></div>
+</footer>
+
+<script>
+  // NAV scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Hamburger
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  // Close nav on link click (mobile)
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Intersection Observer for fade-up + skill bars
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // animate skill bars
+        entry.target.querySelectorAll && entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Also observe skill section separately
+  document.querySelectorAll('.skill-fill').forEach(bar => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) bar.style.width = bar.dataset.width + '%'; });
+    }, { threshold: 0.5 });
+    obs.observe(bar);
+  });
+
+  // Form submit
+  function submitForm() {
+    const fname = document.getElementById('fname').value;
+    const femail = document.getElementById('femail').value;
+    if (!fname || !femail) { alert('Please fill in your name and email.'); return; }
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+</script>
 </body>
 </html>
